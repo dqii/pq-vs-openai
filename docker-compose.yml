@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   db:
     image: lanterndata/lantern-suite:pg15-v8
@@ -15,5 +13,5 @@ services:
       - db_cache:/var/lib/postgresql/data
 
 volumes:
-  lantern_free_cache:
-    driver: db_cache
+  db_cache:
+    driver: local
