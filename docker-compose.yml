@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: lanterndata/lantern-suite:pg15-v8
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: SecurePassword123!
+      POSTGRES_PORT: 5432
+    ports:
+      - 5432:5432
+      - 6432:6432
+    volumes:
+      - db_cache:/var/lib/postgresql/data
+
+volumes:
+  lantern_free_cache:
+    driver: db_cache
